@@ -15,6 +15,7 @@ import com.zbraden.sonicraft.blocks.BlockLodestone;
 import com.zbraden.sonicraft.blocks.BlockOreCobaltBlue;
 import com.zbraden.sonicraft.blocks.BlockOreNickel;
 import com.zbraden.sonicraft.blocks.BlockTerraPreta;
+import com.zbraden.sonicraft.items.ItemCobaltBlue;
 import com.zbraden.sonicraft.items.ItemMagnetite;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
@@ -29,6 +30,7 @@ public class Sonicraft
     
     //Items
     public static Item magnetite;
+    public static Item cobaltBlue;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -49,7 +51,9 @@ public class Sonicraft
 		RegisterHelper.registerBlock(oreCobaltBlue);
 		//Load Items
 		magnetite = new ItemMagnetite();
+		cobaltBlue = new ItemCobaltBlue();
 		//Register Items
 		RegisterHelper.registerItem(magnetite);
+		RegisterHelper.registerItem(cobaltBlue);
     }
 }
