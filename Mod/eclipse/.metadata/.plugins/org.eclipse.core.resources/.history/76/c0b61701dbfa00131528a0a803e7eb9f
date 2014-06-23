@@ -17,7 +17,6 @@ import com.zbraden.sonicraft.blocks.BlockOreCobaltBlue;
 import com.zbraden.sonicraft.blocks.BlockOreNickel;
 import com.zbraden.sonicraft.blocks.BlockTerraPreta;
 import com.zbraden.sonicraft.items.ItemCobaltBlue;
-import com.zbraden.sonicraft.items.ItemIngotNickel;
 import com.zbraden.sonicraft.items.ItemMagnetite;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
@@ -33,7 +32,6 @@ public class Sonicraft
     //Items
     public static Item magnetite;
     public static Item cobaltBlue;
-    public static Item ingotNickel;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -55,17 +53,15 @@ public class Sonicraft
 		//Load Items
 		magnetite = new ItemMagnetite();
 		cobaltBlue = new ItemCobaltBlue();
-		ingotNickel = new ItemIngotNickel();
 		//Register Items
 		RegisterHelper.registerItem(magnetite);
 		RegisterHelper.registerItem(cobaltBlue);
-		RegisterHelper.registerItem(ingotNickel);
     }
     
     @EventHandler
     public void Init(FMLInitializationEvent event)
     {
     	//Recipes!!!
-    	Crafting.loadRecipes();
+    	FurnaceRecipes.smelting().addSmelting(Sonicraft.oreNickel new ItemStack(nickelIngot), 0.5F);
     }
 }

@@ -1,0 +1,7 @@
+package com.zbraden.sonicraft.items;
+
+import net.minecraft.item.Item;
+
+public class ItemIngotNickel extends Item {
+
+}

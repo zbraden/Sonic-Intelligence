@@ -1,0 +1,10 @@
+package com.zbraden.sonicraft;
+
+public class Crafting {
+
+	public static void loadRecipes() 
+	{
+		
+	}
+
+}
