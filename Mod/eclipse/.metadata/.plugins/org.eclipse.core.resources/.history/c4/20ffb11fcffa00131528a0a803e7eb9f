@@ -1,7 +1,0 @@
-package com.zbraden.sonicraft.blocks;
-
-import net.minecraft.block.Block;
-
-public class BlockOreNickel extends Block {
-
-}
