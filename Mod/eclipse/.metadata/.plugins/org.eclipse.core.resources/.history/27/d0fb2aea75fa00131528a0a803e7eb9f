@@ -1,0 +1,7 @@
+package com.zbraden.sonicraft;
+
+import net.minecraft.block.Block;
+
+public class BlockTerraPreta extends Block {
+
+}

@@ -1,0 +1,20 @@
+package com.zbraden.sonicraft.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+
+import com.zbraden.help.Reference;
+
+public class BlockTerraPreta extends Block
+{
+	public BlockTerraPreta()
+	{
+		setBlockName("terraPreta");
+		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+		setCreativeTab(CreativeTabs.tabBlock);
+		setStepSound(soundTypePiston);
+		setHardness(3.0F);
+		setResistance(5.0F);
+		setHarvestLevel("pickaxe", 0);
+	}
+}
