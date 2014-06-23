@@ -11,6 +11,7 @@ public class BlockMain
     public static Block terraPreta;
     public static Block oreNickel;
     public static Block oreCobaltBlue;
+    public static Block logFig;
     
 	public static void loadBlocks(){
 		//Load Blocks
@@ -19,11 +20,13 @@ public class BlockMain
 		terraPreta = new BlockTerraPreta();
 		oreNickel = new BlockOreNickel();
 		oreCobaltBlue = new BlockOreCobaltBlue();
+		logFig = new BlockLogFig();
 		//Register Blocks
 		RegisterHelper.registerBlock(oreLodestone);
 		RegisterHelper.registerBlock(terraPreta);
 		RegisterHelper.registerBlock(cenoteStone);
 		RegisterHelper.registerBlock(oreNickel);
 		RegisterHelper.registerBlock(oreCobaltBlue);
+		RegisterHelper.registerBlock(logFig);
 	}
 }
