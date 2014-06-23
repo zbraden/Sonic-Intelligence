@@ -12,6 +12,8 @@ import com.zbraden.help.Reference;
 import com.zbraden.help.RegisterHelper;
 import com.zbraden.sonicraft.blocks.BlockCenoteStone;
 import com.zbraden.sonicraft.blocks.BlockLodestone;
+import com.zbraden.sonicraft.blocks.BlockOreCobaltBlue;
+import com.zbraden.sonicraft.blocks.BlockOreNickel;
 import com.zbraden.sonicraft.blocks.BlockTerraPreta;
 import com.zbraden.sonicraft.items.ItemMagnetite;
 
@@ -22,6 +24,8 @@ public class Sonicraft
     public static Block oreLodestone;
     public static Block cenoteStone;
     public static Block terraPreta;
+    public static Block oreNickel;
+    public static Block oreCobaltBlue;
     
     //Items
     public static Item magnetite;
@@ -35,10 +39,14 @@ public class Sonicraft
 		oreLodestone = new BlockLodestone();
 		cenoteStone = new BlockCenoteStone();
 		terraPreta = new BlockTerraPreta();
+		oreNickel = new BlockOreNickel();
+		oreCobaltBlue = new BlockOreCobaltBlue();
 		//Register blocks
 		RegisterHelper.registerBlock(oreLodestone);
 		RegisterHelper.registerBlock(terraPreta);
 		RegisterHelper.registerBlock(cenoteStone);
+		RegisterHelper.registerBlock(oreNickel);
+		RegisterHelper.registerBlock(oreCobaltBlue);
 		//Load Items
 		magnetite = new ItemMagnetite();
 		//Register Items
