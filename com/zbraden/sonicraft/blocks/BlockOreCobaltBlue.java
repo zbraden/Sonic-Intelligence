@@ -3,7 +3,7 @@ package com.zbraden.sonicraft.blocks;
 import java.util.Random;
 
 import com.zbraden.sonicraft.help.Reference;
-import com.zbraden.sonicraft.Sonicraft;
+import com.zbraden.sonicraft.items.ItemsMain;
 import net.minecraft.block.BlockOre;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -24,7 +24,7 @@ public class BlockOreCobaltBlue extends BlockOre
 	@Override
     public Item getItemDropped(int metadata, Random rand, int fortune)
     {
-    	return Sonicraft.cobaltBlue;
+    	return ItemsMain.cobaltBlue;
     }
 	
 	@Override
