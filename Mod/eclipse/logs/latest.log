@@ -1,0 +1,94 @@
+[20:08:00] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[20:08:00] [main/INFO]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[20:08:00] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
+[20:08:00] [main/INFO]: Forge Mod Loader version 7.2.211.1121 for Minecraft 1.7.2 loading
+[20:08:00] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_05, running on Windows 7:amd64:6.1, installed at C:\Program Files\Java\jre8
+[20:08:00] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[20:08:00] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:08:00] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[20:08:00] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:08:00] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:08:00] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:08:00] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[20:08:00] [main/ERROR]: The minecraft jar file:/C:/Users/Caleb/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1121/forgeSrc-1.7.2-10.12.2.1121.jar!/net/minecraft/client/ClientBrandRetriever.class appears to be corrupt! There has been CRITICAL TAMPERING WITH MINECRAFT, it is highly unlikely minecraft will work! STOP NOW, get a clean copy and try again!
+[20:08:00] [main/ERROR]: FML has been ordered to ignore the invalid or missing minecraft certificate. This is very likely to cause a problem!
+[20:08:00] [main/ERROR]: Technical information: ClientBrandRetriever was at jar:file:/C:/Users/Caleb/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.2.1121/forgeSrc-1.7.2-10.12.2.1121.jar!/net/minecraft/client/ClientBrandRetriever.class, there were 0 certificates for it
+[20:08:00] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[20:08:00] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:08:00] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[20:08:00] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[20:08:06] [main/INFO]: Setting user: Player868
+[20:08:07] [Client thread/INFO]: LWJGL Version: 2.9.0
+[20:08:08] [Client thread/INFO]: Attempting early MinecraftForge initialization
+[20:08:08] [Client thread/INFO]: MinecraftForge v10.12.2.1121 Initialized
+[20:08:08] [Client thread/INFO]: Replaced 182 ore recipies
+[20:08:08] [Client thread/INFO]: Completed early MinecraftForge initialization
+[20:08:08] [Client thread/INFO]: Config directory created successfully
+[20:08:08] [Client thread/INFO]: Searching C:\Users\Caleb\MineCraft Mods\SoniCraft\.git\Mod\eclipse\mods for mods
+[20:08:08] [Client thread/INFO]: Mod zbraden_sonicraft is missing the required element 'name'. Substituting zbraden_sonicraft
+[20:08:08] [Client thread/ERROR]: FML has detected a mod that is using a package name based on 'net.minecraft.src' : net.minecraft.src.FMLRenderAccessLibrary. This is generally a severe programming error.  There should be no mod code in the minecraft namespace. MOVE YOUR MOD! If you're in eclipse, select your source code and 'refactor' it into a new package. Go on. DO IT NOW!
+[20:08:10] [Client thread/INFO]: Forge Mod Loader has identified 5 mods to load
+[20:08:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Example Mod, FMLFileResourcePack:zbraden_sonicraft
+[20:08:10] [Client thread/INFO]: Processing ObjectHolder annotations
+[20:08:10] [Client thread/INFO]: Found 341 ObjectHolder annotations
+[20:08:10] [Client thread/INFO]: Configured a dormant chunk cache size of 0
+[20:08:10] [Client thread/INFO]: Applying holder lookups
+[20:08:10] [Client thread/INFO]: Holder lookups applied
+[20:08:11] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[20:08:11] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[20:08:11] [Sound Library Loader/INFO]: Sound engine started
+[20:08:11] [Client thread/INFO]: Forge Mod Loader has successfully loaded 5 mods
+[20:08:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Example Mod, FMLFileResourcePack:zbraden_sonicraft
+[20:08:11] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[20:08:11] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[20:08:12] [Sound Library Loader/INFO]: Sound engine started
+[20:08:12] [MCO Availability Checker #1/ERROR]: Couldn't connect to Realms
+[20:08:19] [Server thread/INFO]: Starting integrated minecraft server version 1.7.2
+[20:08:19] [Server thread/INFO]: Generating keypair
+[20:08:19] [Server thread/INFO]: Converting map!
+[20:08:19] [Server thread/INFO]: Scanning folders...
+[20:08:19] [Server thread/INFO]: Total conversion count is 0
+[20:08:19] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[20:08:19] [Server thread/INFO]: Applying holder lookups
+[20:08:19] [Server thread/INFO]: Holder lookups applied
+[20:08:20] [Server thread/INFO]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@68ad5a58)
+[20:08:20] [Server thread/INFO]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@68ad5a58)
+[20:08:20] [Server thread/INFO]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@68ad5a58)
+[20:08:20] [Server thread/INFO]: Preparing start region for level 0
+[20:08:21] [Server thread/INFO]: Preparing spawn area: 18%
+[20:08:22] [Server thread/INFO]: Preparing spawn area: 39%
+[20:08:23] [Server thread/INFO]: Preparing spawn area: 61%
+[20:08:24] [Server thread/INFO]: Preparing spawn area: 80%
+[20:08:25] [Netty Client IO #0/INFO]: Server protocol version 1
+[20:08:25] [Netty IO #1/INFO]: Client protocol version 1
+[20:08:25] [Netty IO #1/INFO]: Client attempting to join with 5 mods : FML@7.2.211.1121,zbraden_sonicraft@1.0,Forge@10.12.2.1121,mcp@9.03,examplemod@1.0
+[20:08:25] [Netty IO #1/INFO]: Attempting connection with missing mods [] at CLIENT
+[20:08:25] [Netty Client IO #0/INFO]: Attempting connection with missing mods [] at SERVER
+[20:08:25] [Client thread/INFO]: [Client thread] Client side modded connection established
+[20:08:25] [Server thread/INFO]: [Server thread] Server side modded connection established
+[20:08:25] [Server thread/INFO]: Player868[local:E:b522d84e] logged in with entity id 142 at (73.5, 63.0, 292.5)
+[20:08:25] [Server thread/INFO]: Player868 joined the game
+[20:08:31] [Server thread/INFO]: [Player868: Set own game mode to Creative Mode]
+[20:08:31] [Client thread/INFO]: [CHAT] Your game mode has been updated
+[20:08:32] [Server thread/INFO]: Player868 has just earned the achievement [Taking Inventory]
+[20:08:32] [Client thread/INFO]: [CHAT] Player868 has just earned the achievement [Taking Inventory]
+[20:10:56] [Server thread/INFO]: Saving and pausing game...
+[20:10:56] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:10:56] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:10:56] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:11:05] [Server thread/INFO]: Saving and pausing game...
+[20:11:05] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:11:05] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:11:05] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:11:06] [Server thread/INFO]: Stopping server
+[20:11:06] [Server thread/INFO]: Saving players
+[20:11:06] [Server thread/INFO]: Saving worlds
+[20:11:06] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:11:06] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:11:06] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:11:06] [Server thread/INFO]: Unloading dimension 0
+[20:11:06] [Server thread/INFO]: Unloading dimension -1
+[20:11:06] [Server thread/INFO]: Unloading dimension 1
+[20:11:06] [Server thread/INFO]: Applying holder lookups
+[20:11:06] [Server thread/INFO]: Holder lookups applied
+[20:11:06] [Client thread/INFO]: Stopping!
