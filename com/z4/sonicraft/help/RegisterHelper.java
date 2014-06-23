@@ -1,4 +1,4 @@
-package com.zbraden.sonicraft.help;
+package com.z4.sonicraft.help;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

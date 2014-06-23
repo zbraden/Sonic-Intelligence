@@ -1,6 +1,7 @@
-package com.zbraden.sonicraft.blocks;
+package com.z4.sonicraft.blocks;
 
-import com.zbraden.sonicraft.help.Reference;
+import com.z4.sonicraft.help.Reference;
+
 import net.minecraft.block.BlockOre;
 import net.minecraft.creativetab.CreativeTabs;
 

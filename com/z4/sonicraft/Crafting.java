@@ -1,7 +1,7 @@
-package com.zbraden.sonicraft;
+package com.z4.sonicraft;
 
-import com.zbraden.sonicraft.blocks.BlockMain;
-import com.zbraden.sonicraft.items.ItemsMain;
+import com.z4.sonicraft.blocks.BlockMain;
+import com.z4.sonicraft.items.ItemsMain;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;

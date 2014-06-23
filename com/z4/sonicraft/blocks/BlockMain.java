@@ -1,6 +1,6 @@
-package com.zbraden.sonicraft.blocks;
+package com.z4.sonicraft.blocks;
 
-import com.zbraden.sonicraft.help.RegisterHelper;
+import com.z4.sonicraft.help.RegisterHelper;
 
 import net.minecraft.block.Block;
 

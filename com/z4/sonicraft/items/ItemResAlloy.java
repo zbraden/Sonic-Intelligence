@@ -1,15 +1,16 @@
-package com.zbraden.sonicraft.items;
+package com.z4.sonicraft.items;
 
-import com.zbraden.sonicraft.help.Reference;
+import com.z4.sonicraft.help.Reference;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemCrystalNode extends Item 
+public class ItemResAlloy extends Item 
 {
-	public ItemCrystalNode() 
+	public ItemResAlloy() 
 	{
 		super();
-		setUnlocalizedName("crystalNode");
+		setUnlocalizedName("resAlloy");
 		setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 		setCreativeTab(CreativeTabs.tabMaterials);
 	}

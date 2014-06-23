@@ -1,15 +1,16 @@
-package com.zbraden.sonicraft.items;
+package com.z4.sonicraft.items;
 
-import com.zbraden.sonicraft.help.Reference;
+import com.z4.sonicraft.help.Reference;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemIngotNickel extends Item
+public class ItemMagnetite extends Item 
 {
-	public ItemIngotNickel()
+	public ItemMagnetite()
 	{
 		super();
-		setUnlocalizedName("ingotNickel");
+		setUnlocalizedName("magnetite");
 		setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 		setCreativeTab(CreativeTabs.tabMaterials);
 	}

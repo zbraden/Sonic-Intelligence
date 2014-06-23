@@ -1,6 +1,7 @@
-package com.zbraden.sonicraft.items;
+package com.z4.sonicraft.items;
 
-import com.zbraden.sonicraft.help.RegisterHelper;
+import com.z4.sonicraft.help.RegisterHelper;
+
 import net.minecraft.item.Item;
 
 public class ItemsMain 

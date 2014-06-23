@@ -1,6 +1,6 @@
-package com.zbraden.sonicraft.items;
+package com.z4.sonicraft.items;
 
-import com.zbraden.sonicraft.help.Reference;
+import com.z4.sonicraft.help.Reference;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

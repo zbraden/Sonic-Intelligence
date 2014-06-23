@@ -1,9 +1,10 @@
-package com.zbraden.sonicraft.blocks;
+package com.z4.sonicraft.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.block.material.Material;
-import com.zbraden.sonicraft.help.Reference;
+
+import com.z4.sonicraft.help.Reference;
 
 public class BlockTerraPreta extends Block
 {
