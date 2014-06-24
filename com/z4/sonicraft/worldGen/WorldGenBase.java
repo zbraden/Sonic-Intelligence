@@ -17,17 +17,28 @@ public class WorldGenBase implements IWorldGenerator
 		 //WorldGenAbstractTree func_150567_a(new GenFigTree());
 		 switch(world.provider.dimensionId){
 		 case 0:
-			 generateOverworld(world, random, chunkX*16, chunkZ*16);
+			 generateNickelOverworld(world, random, chunkX*16, chunkZ*16);
+			 generateCobaltOverworld(world, random, chunkX*16, chunkZ*16);
 		 }
 	 }
 	 
-	 private void generateOverworld(World world, Random random, int chunkX, int chunkZ){
+	 private void generateNickelOverworld(World world, Random random, int chunkX, int chunkZ){
 		 for (int i = 0; i < 100; i++){
 			 int randPosX = chunkX + random.nextInt(16);
 			 int randPosY = random.nextInt(64);
 			 int randPosZ = chunkZ + random.nextInt(16);
 			 
 			 (new WorldGenMinable(BlockMain.oreNickel, 6)).generate(world, random, randPosX, randPosY, randPosZ);
+		 }
+	 }
+	 
+	 private void generateCobaltOverworld(World world, Random random, int chunkX, int chunkZ){
+		 for (int i = 0; i < 100; i++){
+			 int randPosX = chunkX + random.nextInt(16);
+			 int randPosY = random.nextInt(64);
+			 int randPosZ = chunkZ + random.nextInt(16);
+			 
+			 (new WorldGenMinable(BlockMain.oreCobaltBlue, 6)).generate(world, random, randPosX, randPosY, randPosZ);
 		 }
 	 }
 }
