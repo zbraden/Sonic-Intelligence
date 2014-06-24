@@ -19,6 +19,7 @@ public class WorldGenBase implements IWorldGenerator
 		 case 0:
 			 generateNickelOverworld(world, random, chunkX*16, chunkZ*16);
 			 generateCobaltOverworld(world, random, chunkX*16, chunkZ*16);
+			 generateLimestoneOverworld(world, random, chunkX*16, chunkZ*16);
 		 }
 	 }
 	 
@@ -39,6 +40,16 @@ public class WorldGenBase implements IWorldGenerator
 			 int randPosZ = chunkZ + random.nextInt(16);
 			 
 			 (new WorldGenMinable(BlockMain.oreCobaltBlue, 6)).generate(world, random, randPosX, randPosY, randPosZ);
+		 }
+	 }
+	 
+	 private void generateLimestoneOverworld(World world, Random random, int chunkX, int chunkZ){
+		 for (int i = 0; i < 100; i++){
+			 int randPosX = chunkX + random.nextInt(16);
+			 int randPosY = random.nextInt(64);
+			 int randPosZ = chunkZ + random.nextInt(16);
+			 
+			 (new WorldGenMinable(BlockMain.limestone, 15)).generate(world, random, randPosX, randPosY, randPosZ);
 		 }
 	 }
 }
