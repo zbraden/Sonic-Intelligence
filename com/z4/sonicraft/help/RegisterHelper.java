@@ -2,6 +2,8 @@ package com.z4.sonicraft.help;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RegisterHelper {
@@ -14,5 +16,10 @@ public class RegisterHelper {
 	public static void registerItem(Item item)
 	{
 		GameRegistry.registerItem(item, Reference.MODID + "_" + item.getUnlocalizedName().substring(5));
+	}
+	
+	public static void registerFluid(Fluid fluid)
+	{
+		FluidRegistry.registerFluid(fluid);
 	}
 }
