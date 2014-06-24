@@ -4,6 +4,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 import com.z4.sonicraft.blocks.BlockMain;
 import com.z4.sonicraft.help.Reference;
@@ -21,6 +22,10 @@ public class Sonicraft
     	BlockMain.loadBlocks();
     	//Load and Register Items
     	ItemsMain.loadItems();
+    	//Ore Generations
+    	OreGen ore_gen = new OreGen();
+    	GameRegistry.registerWorldGenerator(ore_gen, 0);
+    	
     }
     
     @EventHandler
