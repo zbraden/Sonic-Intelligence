@@ -25,9 +25,6 @@ public class Sonicraft
     	BlockMain.loadBlocks();
     	//Load and Register Items
     	ItemsMain.loadItems();
-    	//Ore Generations
-    	OreGen ore_gen = new OreGen();
-    	GameRegistry.registerWorldGenerator(ore_gen, 0);
 <<<<<<< HEAD
     
     	
