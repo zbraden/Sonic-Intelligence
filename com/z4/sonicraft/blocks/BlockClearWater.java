@@ -33,8 +33,8 @@ public class BlockClearWater extends BlockFluidClassic
     
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister icon) {
-            stillIcon = icon.registerIcon(Reference.MODID + ": clearWater");
-            flowingIcon = icon.registerIcon(Reference.MODID + ": clearWaterFlow");
+            this.stillIcon = icon.registerIcon(Reference.MODID + ":" + "clearWater");
+            this.flowingIcon = icon.registerIcon(Reference.MODID + ":" + "clearWaterFlow");
     }
     
     @Override
