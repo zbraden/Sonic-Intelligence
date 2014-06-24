@@ -7,6 +7,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import com.z4.sonicraft.blocks.BlockMain;
+import com.z4.sonicraft.fluids.FluidMain;
 import com.z4.sonicraft.help.Reference;
 import com.z4.sonicraft.items.ItemsMain;
 
@@ -18,6 +19,8 @@ public class Sonicraft
     {
     	//Startup Call out
     	System.out.println("Wait!... Did you hear that?");
+    	//Load and Register Fluids
+    	FluidMain.loadFluids();
     	//Load and Register blocks
     	BlockMain.loadBlocks();
     	//Load and Register Items
@@ -25,7 +28,12 @@ public class Sonicraft
     	//Ore Generations
     	OreGen ore_gen = new OreGen();
     	GameRegistry.registerWorldGenerator(ore_gen, 0);
+<<<<<<< HEAD
+    
     	
+=======
+
+>>>>>>> fbbe20b0a254976281958e1d6d68f7ee7d817fa3
     }
     
     @EventHandler

@@ -26,7 +26,7 @@ public class OreGen implements IWorldGenerator
 	
 	private void generateSurface(World world, Random random, int x, int z)
 	{
-		this.generateOre(BlockMain.oreNickel, world, random, x, z, 6, 100, 10, 60, BlockMain.oreNickel);
+		this.generateOre(BlockMain.oreNickel, world, random, x, z, 10, 100, 10, 60, BlockMain.oreNickel);
 	}
 	
 	public void generateOre(Block block, World world, Random random, int chunk_x, int chunk_z, int maxVeinSize, int chancesToSpawn, int minY, int maxY, Block generateIn)
