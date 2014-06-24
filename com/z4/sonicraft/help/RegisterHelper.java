@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RegisterHelper {
@@ -21,5 +22,9 @@ public class RegisterHelper {
 	public static void registerFluid(Fluid fluid)
 	{
 		FluidRegistry.registerFluid(fluid);
+	}
+	
+	public static void registerGen(IWorldGenerator worldGenClass, int weightedProb){
+		GameRegistry.registerWorldGenerator(worldGenClass, weightedProb);
 	}
 }

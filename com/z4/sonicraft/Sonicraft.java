@@ -9,6 +9,7 @@ import com.z4.sonicraft.blocks.BlockMain;
 import com.z4.sonicraft.fluids.FluidMain;
 import com.z4.sonicraft.help.Reference;
 import com.z4.sonicraft.items.ItemsMain;
+import com.z4.sonicraft.worldGen.WorldGen;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
 public class Sonicraft
@@ -24,6 +25,8 @@ public class Sonicraft
     	BlockMain.loadBlocks();
     	//Load and Register Items
     	ItemsMain.loadItems();
+    	//Load and Register World Gen
+    	WorldGen.init();
 
     }
     
