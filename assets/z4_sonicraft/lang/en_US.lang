@@ -3,7 +3,11 @@ tile.cenoteStone.name=Cavern Stone
 tile.terraPreta.name=Black Earth
 tile.oreNickel.name=Nickel Ore
 tile.oreCobaltBlue.name=Cobalt Aluminate Ore
+tile.limestone.name=Limestone
+tile.limestoneCobble.name=Limestone Cobble
+tile.logFig.name=Fig Log
 item.cobaltBlue.name=Cobalt Aluminate
 item.ingotNickel.name=Nickel Ingot
 item.crystalNode.name=Humming Crystal Node
 item.resAlloy.name=Resonating Alloy
+
