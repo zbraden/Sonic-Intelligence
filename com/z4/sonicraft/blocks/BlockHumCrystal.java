@@ -1,29 +1,33 @@
 package com.z4.sonicraft.blocks;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockHumCrystal extends Block
+public class BlockHumCrystal extends BlockContainer
 {
-	protected BlockHumCrystal(Material material) {
-		super(Material.glass);
-		// TODO Auto-generated constructor stub
+	public BlockHumCrystal() {		
+		super(Material.iron);
+		this.setBlockName("blockHumCrystal");
+		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 1.0F, 0.8F);
 	}
-
-	public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z)
-    {
-		if (world.getBlockMetadata(x, y, z) % 2 == 0) {
-			setBlockBounds(0F, 0F, 0F, 1F, 1F, 1F);
-		} else {
-			setBlockBounds(0.25F, 0.25F, 0.25F, 0.75F, 0.75F, 0.75F);
-		}
-    }
 	
+    @Override
+    public TileEntity createNewTileEntity(World world, int var2) {
+            return new BlockHumCrystalEntity();
+    }
+    
+    @Override
+    public int getRenderType() {
+        return -1;
+    }
+    
 	public boolean isOpaqueCube()
     {
         return false;
@@ -33,11 +37,7 @@ public class BlockHumCrystal extends Block
     {
         return false;
     }
-    
-    public AxisAlignedBB getSelectedBoundingBoxFromPool(World world, int x, int y, int z) {
-    	setBlockBoundsBasedOnState(world, x, y, z);
-    	return super.getSelectedBoundingBoxFromPool(world, x, y, z);
-    }
+   
     
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
     	setBlockBoundsBasedOnState(world, x, y, z);
@@ -48,5 +48,6 @@ public class BlockHumCrystal extends Block
     	setBlockBoundsBasedOnState(world, x, y, z);
     	return super.collisionRayTrace(world, x, y, z, start, end);
     }
+
 
 }

@@ -15,6 +15,7 @@ public class BlockMain
     public static Block limestoneCobble;
     public static Block clearWater;
     public static Block towerPost;
+    public static Block crystalHum;
     
 	public static void loadBlocks(){
 		//Load Blocks
@@ -28,6 +29,7 @@ public class BlockMain
 		limestoneCobble = new BlockLimestoneCobble();
 		clearWater = new BlockClearWater();
 		towerPost = new BlockTowerPost();
+		crystalHum = new BlockHumCrystal();
 		//Register Blocks
 		RegisterHelper.registerBlock(oreLodestone);
 		RegisterHelper.registerBlock(terraPreta);
@@ -39,5 +41,6 @@ public class BlockMain
 		RegisterHelper.registerBlock(limestoneCobble);
 		RegisterHelper.registerBlock(clearWater);
 		RegisterHelper.registerBlock(towerPost);
+		RegisterHelper.registerBlock(crystalHum);
 	}
 }

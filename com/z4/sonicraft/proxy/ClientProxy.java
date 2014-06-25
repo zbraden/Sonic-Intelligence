@@ -1,16 +1,18 @@
 package com.z4.sonicraft.proxy;
 
-import com.z4.sonicraft.blocks.BlockHumCrystal;
-
-import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
-import cpw.mods.fml.client.registry.RenderingRegistry;
+
+import com.z4.sonicraft.blocks.BlockHumCrystalEntity;
+import com.z4.sonicraft.renderers.RenderCrystalNode;
+
+import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy{
 
-	@Override
 	public void registerRenderers() {
-	//MinecraftForgeClient.registerItemRenderer(BlockHumCrystal.class, RenderCrystalNode(model));
+		TileEntitySpecialRenderer render = new RenderCrystalNode();
+		ClientRegistry.bindTileEntitySpecialRenderer(BlockHumCrystalEntity.class, render);
 	
 	}
 }
