@@ -1,6 +1,7 @@
 package com.z4.sonicraft.renderers;
 
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -38,6 +39,7 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
 		GL11.glPushMatrix();
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
 		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		crystalModel.renderAll();
 		GL11.glDisable(GL11.GL_BLEND);
@@ -76,15 +78,15 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
 		
 		GL11.glPushMatrix();
-		GL11.glScalef(-1F, -1F, -1F);
-		GL11.glTranslatef(0F, 1.2F, 0F);
+		GL11.glScalef(1F, 1F, 1F);
+		GL11.glTranslatef(0F, 0.0F, 1.0F);
 		
         GL11.glDisable(GL11.GL_CULL_FACE);
 		
 	    Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 	    
 	    GL11.glPushMatrix();
-        GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(0F, 0.0F, 0.0F, 1.0F);
 		GL11.glEnable(GL11.GL_BLEND);
 		
 		crystalModel.renderAll();

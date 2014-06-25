@@ -17,11 +17,11 @@ import net.minecraft.world.World;
 public class BlockHumCrystal extends BlockContainer
 {
 	public BlockHumCrystal() {		
-		super(Material.iron);
+		super(Material.portal);
 		this.setBlockName("blockHumCrystal");
+		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 1.0F, 0.8F);
-		//setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 		setLightLevel(1.0F);
 	}
 	
