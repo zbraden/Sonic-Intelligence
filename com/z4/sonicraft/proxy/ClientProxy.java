@@ -3,7 +3,9 @@ package com.z4.sonicraft.proxy;
 import net.minecraft.client.audio.SoundHandler;
 
 import com.z4.sonicraft.blocks.BlockHumCrystalEntity;
+import com.z4.sonicraft.blocks.BlockTourmalineEntity;
 import com.z4.sonicraft.renderers.RenderCrystalNode;
+import com.z4.sonicraft.renderers.RenderTourmaline;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -20,5 +22,9 @@ public class ClientProxy extends CommonProxy{
 		RenderCrystalNode renderCrystal = new RenderCrystalNode(renderCrystalID);
 		ClientRegistry.bindTileEntitySpecialRenderer(BlockHumCrystalEntity.class, renderCrystal);
 		RenderingRegistry.registerBlockHandler(renderCrystal);
+		int renderTourmalineID = RenderingRegistry.getNextAvailableRenderId();
+		RenderTourmaline renderTourmaline = new RenderTourmaline(renderTourmalineID);
+		ClientRegistry.bindTileEntitySpecialRenderer(BlockTourmalineEntity.class, renderTourmaline);
+		RenderingRegistry.registerBlockHandler(renderTourmaline);
 	}
 }
