@@ -52,5 +52,5 @@ public class Sonicraft
     	Crafting.loadRecipes();
     }
     
-    public static CreativeTabs tabSonicraft = new CreativeTabsSonicraft("Sonicraft");
+    public static CreativeTabs tabSonicraft = new CreativeTabsSonicraft("Sonic Intelligence");
 }
