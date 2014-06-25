@@ -7,6 +7,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import net.minecraft.creativetab.CreativeTabs;
+
 import com.z4.sonicraft.blocks.BlockHumCrystal;
 import com.z4.sonicraft.blocks.BlockHumCrystalEntity;
 import com.z4.sonicraft.blocks.BlockMain;
@@ -49,4 +51,6 @@ public class Sonicraft
     	//Recipes!!!
     	Crafting.loadRecipes();
     }
+    
+    public static CreativeTabs tabSonicraft = new CreativeTabsSonicraft("Sonicraft");
 }
