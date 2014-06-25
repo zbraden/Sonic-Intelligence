@@ -1,7 +1,9 @@
 package com.z4.sonicraft.blocks;
 
 import com.z4.sonicraft.help.Reference;
+import com.z4.sonicraft.renderers.RenderCrystalNode;
 
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -19,7 +21,8 @@ public class BlockHumCrystal extends BlockContainer
 		this.setBlockName("blockHumCrystal");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 1.0F, 0.8F);
-		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+		//setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+		setLightLevel(1.0F);
 	}
 	
     @Override
@@ -29,7 +32,7 @@ public class BlockHumCrystal extends BlockContainer
     
     @Override
     public int getRenderType() {
-        return -1;
+    	return RenderCrystalNode.renderID;
     }
     
 	public boolean isOpaqueCube()
@@ -52,9 +55,4 @@ public class BlockHumCrystal extends BlockContainer
     	setBlockBoundsBasedOnState(world, x, y, z);
     	return super.collisionRayTrace(world, x, y, z, start, end);
     }
-    
-    public void registerIcons(IIconRegister icon) {
-        this.blockIcon = icon.registerIcon(Reference.MODID + ":" + "textures/items/crystalNode");
-    }
-
 }
