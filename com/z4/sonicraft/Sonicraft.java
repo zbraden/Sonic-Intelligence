@@ -5,7 +5,6 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-
 import com.z4.sonicraft.blocks.BlockMain;
 import com.z4.sonicraft.fluids.FluidMain;
 import com.z4.sonicraft.help.Reference;
@@ -35,7 +34,6 @@ public class Sonicraft
     	WorldGen.init();
     	//Register Proxy Renderers
     	//proxy.registerRenderers();
-
     }
     
     @EventHandler
