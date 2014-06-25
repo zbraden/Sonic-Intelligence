@@ -1,9 +1,9 @@
 package com.z4.sonicraft.blocks;
 
-import com.z4.sonicraft.help.Reference;
-
 import net.minecraft.block.BlockOre;
-import net.minecraft.creativetab.CreativeTabs;
+
+import com.z4.sonicraft.Sonicraft;
+import com.z4.sonicraft.help.Reference;
 
 public class BlockLodestone extends BlockOre
 {
@@ -11,7 +11,7 @@ public class BlockLodestone extends BlockOre
 	{
 		setBlockName("oreLodestone");
 		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Sonicraft.tabSonicraft);
 		setStepSound(soundTypePiston);
 		setHardness(3.0F);
 		setResistance(5.0F);

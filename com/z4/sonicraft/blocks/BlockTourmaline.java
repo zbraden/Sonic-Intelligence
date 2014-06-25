@@ -2,13 +2,13 @@ package com.z4.sonicraft.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
+import com.z4.sonicraft.Sonicraft;
 import com.z4.sonicraft.help.Reference;
 import com.z4.sonicraft.renderers.RenderTourmaline;
 
@@ -18,7 +18,7 @@ public class BlockTourmaline extends BlockContainer
 		super(Material.portal);
 		this.setBlockName("blockTourmaline");
 		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(Sonicraft.tabSonicraft);
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.7F, 0.8F);
 		setLightLevel(1.0F);
 		setStepSound(soundTypeGlass);

@@ -1,15 +1,16 @@
 package com.z4.sonicraft.blocks;
 
-import com.z4.sonicraft.fluids.FluidMain;
-import com.z4.sonicraft.help.Reference;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
+
+import com.z4.sonicraft.Sonicraft;
+import com.z4.sonicraft.fluids.FluidMain;
+import com.z4.sonicraft.help.Reference;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,7 +23,8 @@ public class BlockClearWater extends BlockFluidClassic
     
     public BlockClearWater() {
             super(FluidMain.clearWater, Material.water);
-            setCreativeTab(CreativeTabs.tabBlock);
+            setCreativeTab(Sonicraft.tabSonicraft);
+            //setUnlocalizedName("clearWater");
     }
     
     @Override

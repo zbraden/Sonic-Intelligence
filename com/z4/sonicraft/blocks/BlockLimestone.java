@@ -2,12 +2,12 @@ package com.z4.sonicraft.blocks;
 
 import java.util.Random;
 
-import com.z4.sonicraft.help.Reference;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+
+import com.z4.sonicraft.Sonicraft;
+import com.z4.sonicraft.help.Reference;
 
 public class BlockLimestone extends Block 
 {
@@ -16,7 +16,7 @@ public class BlockLimestone extends Block
 		super(Material.rock);
 		setBlockName("limestone");
 		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Sonicraft.tabSonicraft);
 		setStepSound(soundTypePiston);
 		setHardness(3.0F);
 		setResistance(5.0F);

@@ -2,12 +2,12 @@ package com.z4.sonicraft.blocks;
 
 import java.util.Random;
 
+import net.minecraft.block.BlockOre;
+import net.minecraft.item.Item;
+
+import com.z4.sonicraft.Sonicraft;
 import com.z4.sonicraft.help.Reference;
 import com.z4.sonicraft.items.ItemsMain;
-
-import net.minecraft.block.BlockOre;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
 public class BlockOreCobaltBlue extends BlockOre
 {
@@ -15,7 +15,7 @@ public class BlockOreCobaltBlue extends BlockOre
 	{
 		setBlockName("oreCobaltBlue");
 		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Sonicraft.tabSonicraft);
 		setStepSound(soundTypePiston);
 		setHardness(3.0F);
 		setResistance(5.0F);

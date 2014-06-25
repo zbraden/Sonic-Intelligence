@@ -10,4 +10,9 @@ item.cobaltBlue.name=Cobalt Aluminate
 item.ingotNickel.name=Nickel Ingot
 item.crystalNode.name=Humming Crystal Node
 item.resAlloy.name=Resonating Alloy
+itemGroup.sonicraftMain=Sonic Intelligence
+tile.blockHumCrystal.name=Humming Crystal Formation
+tile.blockTourmaline.name=Quetzal Tourmaline Formation
+item.magnetite.name=Magnetite
+tile.logFig.name=Strangler Fig Wood
 
