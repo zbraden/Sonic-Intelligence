@@ -1,10 +1,15 @@
 package com.z4.sonicraft.blocks;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 import com.z4.sonicraft.help.Reference;
 
@@ -40,6 +45,65 @@ public class BlockLogFig extends Block
     this.blockIcon = woodSides1.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     this.woodTop = woodSides1.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "Top");
     }
+
+	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) 
+	{
+		for (int i = 0; i < 4; ++i) {
+			list.add(new ItemStack(this, 1, i));
+		}
+	}
+
+	@Override
+	public void breakBlock(World world, int x, int y, int z, Block par5, int par6)
+	{
+		byte radius = 4;
+		int bounds = radius + 1;
+
+		if (world.checkChunksExist(x - bounds, y - bounds, z - bounds, x + bounds, y + bounds, z + bounds)) 
+		{
+			for (int i = -radius; i <= radius; ++i) 
+			{
+				for (int j = -radius; j <= radius; ++j) 
+				{
+					for (int k = -radius; k <= radius; ++k)
+					{
+						Block block = world.getBlock(x + i, y + j, z + k);
+
+						if (block.isLeaves(world, x, y, z)) 
+						{
+							block.beginLeavesDecay(world, x + i, y + j, z + k);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@Override
+	public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int meta)
+	{
+		int type = 0;
+		byte orientation = 0;
+
+		switch (side)
+		{
+		case 0:
+		case 1:
+			orientation = 0;
+			break;
+
+		case 2:
+		case 3:
+			orientation = 8;
+			break;
+
+		case 4:
+		case 5:
+			orientation = 4;
+		}
+
+		return type | orientation;
+	}
 }
 
 

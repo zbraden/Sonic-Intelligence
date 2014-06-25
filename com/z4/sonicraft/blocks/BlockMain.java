@@ -1,11 +1,7 @@
 package com.z4.sonicraft.blocks;
 
-import com.z4.sonicraft.fluids.FluidClearWater;
-import com.z4.sonicraft.fluids.FluidMain;
 import com.z4.sonicraft.help.RegisterHelper;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 
 public class BlockMain
 {
@@ -18,6 +14,7 @@ public class BlockMain
     public static Block limestone;
     public static Block limestoneCobble;
     public static Block clearWater;
+    public static Block towerPost;
     
 	public static void loadBlocks(){
 		//Load Blocks
@@ -30,6 +27,7 @@ public class BlockMain
 		limestone = new BlockLimestone();
 		limestoneCobble = new BlockLimestoneCobble();
 		clearWater = new BlockClearWater();
+		towerPost = new BlockTowerPost();
 		//Register Blocks
 		RegisterHelper.registerBlock(oreLodestone);
 		RegisterHelper.registerBlock(terraPreta);
@@ -40,5 +38,6 @@ public class BlockMain
 		RegisterHelper.registerBlock(limestone);
 		RegisterHelper.registerBlock(limestoneCobble);
 		RegisterHelper.registerBlock(clearWater);
+		RegisterHelper.registerBlock(towerPost);
 	}
 }
