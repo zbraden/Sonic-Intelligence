@@ -1,11 +1,8 @@
 package com.z4.sonicraft.blocks;
 
-import java.util.Random;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MovingObjectPosition;
@@ -13,17 +10,16 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 import com.z4.sonicraft.help.Reference;
-import com.z4.sonicraft.items.ItemsMain;
-import com.z4.sonicraft.renderers.RenderCrystalNode;
+import com.z4.sonicraft.renderers.RenderTourmaline;
 
-public class BlockHumCrystal extends BlockContainer
+public class BlockTourmaline extends BlockContainer
 {
-	public BlockHumCrystal() {		
+	public BlockTourmaline() {		
 		super(Material.portal);
-		this.setBlockName("blockHumCrystal");
+		this.setBlockName("blockTourmaline");
 		setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 		this.setCreativeTab(CreativeTabs.tabBlock);
-		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 1.0F, 0.8F);
+		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.7F, 0.8F);
 		setLightLevel(1.0F);
 		setStepSound(soundTypeGlass);
 		setHardness(1.0F);
@@ -32,12 +28,12 @@ public class BlockHumCrystal extends BlockContainer
 	
     @Override
     public TileEntity createNewTileEntity(World world, int var2) {
-            return new BlockHumCrystalEntity();
+            return new BlockTourmalineEntity();
     }
     
     @Override
     public int getRenderType() {
-    	return RenderCrystalNode.renderID;
+    	return RenderTourmaline.renderTourmalineID;
     }
     
 	public boolean isOpaqueCube()
@@ -60,22 +56,5 @@ public class BlockHumCrystal extends BlockContainer
     	setBlockBoundsBasedOnState(world, x, y, z);
     	return super.collisionRayTrace(world, x, y, z, start, end);
     }
-    
-	@Override
-    public Item getItemDropped(int metadata, Random rand, int fortune)
-    {
-    	return ItemsMain.crystalNode;
-    }
-	
-	@Override
-    public int quantityDropped(Random rand2)
-    {
-        return 3 + rand2.nextInt(3);
-    }
-    
-    @Override
-    public int quantityDroppedWithBonus(int par1, Random par2Random)
-    {
-            return quantityDropped(par2Random) + par2Random.nextInt(par1 + 1);
-    }
+   
 }

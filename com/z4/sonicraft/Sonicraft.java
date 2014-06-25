@@ -12,6 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import com.z4.sonicraft.blocks.BlockHumCrystal;
 import com.z4.sonicraft.blocks.BlockHumCrystalEntity;
 import com.z4.sonicraft.blocks.BlockMain;
+import com.z4.sonicraft.blocks.BlockTourmalineEntity;
 import com.z4.sonicraft.fluids.FluidMain;
 import com.z4.sonicraft.help.Reference;
 import com.z4.sonicraft.items.ItemsMain;
@@ -42,6 +43,7 @@ public class Sonicraft
     	//Register Proxy Renderers
     	proxy.registerRenderers();
     	GameRegistry.registerTileEntity(BlockHumCrystalEntity.class, "blockHumCrystal");
+    	GameRegistry.registerTileEntity(BlockTourmalineEntity.class, "blockTourmaline");
     }
     
     @EventHandler

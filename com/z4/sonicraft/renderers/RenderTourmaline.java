@@ -1,8 +1,5 @@
 package com.z4.sonicraft.renderers;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -16,20 +13,22 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 
+import org.lwjgl.opengl.GL11;
+
 import com.z4.sonicraft.help.Reference;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 
-public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISimpleBlockRenderingHandler
+public class RenderTourmaline extends TileEntitySpecialRenderer implements ISimpleBlockRenderingHandler
 {
-	private IModelCustom crystalModel;
-	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/blocks/blockHumCrystal.png");
-	public static int renderID;
+	private IModelCustom tourmalineModel;
+	private static final ResourceLocation texture = new ResourceLocation(Reference.MODID + ":" + "textures/blocks/blockTourmaline.png");
+	public static int renderTourmalineID;
 	
-	public RenderCrystalNode(int ID) {
-		RenderCrystalNode.renderID = ID;
-		ResourceLocation loc =  new ResourceLocation(Reference.MODID, "crystal.obj");
-		crystalModel = AdvancedModelLoader.loadModel(loc); 
+	public RenderTourmaline(int ID) {
+		RenderTourmaline.renderTourmalineID = ID;
+		ResourceLocation loc =  new ResourceLocation(Reference.MODID, "tourmaline.obj");
+		tourmalineModel = AdvancedModelLoader.loadModel(loc); 
 	}
     
 	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) {
@@ -41,7 +40,7 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		GL11.glDisable(GL11.GL_CULL_FACE);
-		crystalModel.renderAll();
+		tourmalineModel.renderAll();
 		GL11.glDisable(GL11.GL_BLEND);
 		GL11.glEnable(GL11.GL_CULL_FACE);
 		GL11.glPopMatrix();
@@ -71,7 +70,7 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
 
 	@Override
 	public int getRenderId() {
-		return RenderCrystalNode.renderID;
+		return RenderTourmaline.renderTourmalineID;
 	}
 	
     @Override
@@ -89,7 +88,7 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
         GL11.glRotatef(0F, 0.0F, 0.0F, 1.0F);
 		GL11.glEnable(GL11.GL_BLEND);
 		
-		crystalModel.renderAll();
+		tourmalineModel.renderAll();
        
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glPopMatrix();

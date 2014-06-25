@@ -46,13 +46,6 @@ public class BlockLogFig extends Block
     this.woodTop = woodSides1.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "Top");
     }
 
-	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) 
-	{
-		for (int i = 0; i < 4; ++i) {
-			list.add(new ItemStack(this, 1, i));
-		}
-	}
-
 	@Override
 	public void breakBlock(World world, int x, int y, int z, Block par5, int par6)
 	{
