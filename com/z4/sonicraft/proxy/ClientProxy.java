@@ -1,14 +1,18 @@
 package com.z4.sonicraft.proxy;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundHandler;
+import net.minecraft.world.World;
 
 import com.z4.sonicraft.blocks.BlockHumCrystalEntity;
 import com.z4.sonicraft.blocks.BlockTourmalineEntity;
 import com.z4.sonicraft.blocks.BlockTowerPostEntity;
+import com.z4.sonicraft.effects.FXGlowSpark;
 import com.z4.sonicraft.renderers.RenderCrystalNode;
 import com.z4.sonicraft.renderers.RenderTourmaline;
 import com.z4.sonicraft.renderers.RenderTowerPost;
 
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
@@ -33,4 +37,17 @@ public class ClientProxy extends CommonProxy{
 		ClientRegistry.bindTileEntitySpecialRenderer(BlockTowerPostEntity.class, renderTower);
 		RenderingRegistry.registerBlockHandler(renderTower);
 	}
+	
+	public void sparkle(float var1, float var2, float var3, float var4, int var5, float var6)
+    {
+	    FXGlowSpark newSpark = new FXGlowSpark(this.getClientWorld(), (double)var1, (double)var2, (double)var3, var4, var5, 6);
+	    newSpark.noClip = true;
+	    newSpark.setGravity(var6);
+	    Minecraft.getMinecraft().effectRenderer.addEffect(newSpark);
+    }
+  
+	public World getClientWorld()
+    {
+        return FMLClientHandler.instance().getClient().theWorld;
+    }
 }

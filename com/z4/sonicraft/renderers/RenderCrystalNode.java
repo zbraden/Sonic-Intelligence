@@ -43,7 +43,7 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
 		this.bindTexture(texture);
 		GL11.glPushMatrix();
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glTranslatef((float) x - 0.0F, (float) y + 0.0F, (float) z + 1.0F);
+		GL11.glTranslatef((float) x + 1.0F, (float) y + 0.0F, (float) z + 1.0F);
 		if(direction == 1)
 		{
 			GL11.glRotatef(360F, 0, 1F, 0F);
