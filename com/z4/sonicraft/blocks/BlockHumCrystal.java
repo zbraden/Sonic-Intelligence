@@ -2,11 +2,15 @@ package com.z4.sonicraft.blocks;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
@@ -60,6 +64,55 @@ public class BlockHumCrystal extends BlockContainer
     	setBlockBoundsBasedOnState(world, x, y, z);
     	return super.collisionRayTrace(world, x, y, z, start, end);
     }
+    
+	public void onBlockAdded(World par1World, int par2, int par3, int par4)
+	{
+		super.onBlockAdded(par1World, par2, par3, par4);
+		this.func_149930_e(par1World, par2, par3, par4);
+	}
+
+	/**
+	 * set a blocks direction
+	 */
+	  private void func_149930_e(World p_149930_1_, int p_149930_2_, int p_149930_3_, int p_149930_4_)
+	    {
+	        if (!p_149930_1_.isRemote)
+	        {
+            Block block = p_149930_1_.getBlock(p_149930_2_, p_149930_3_, p_149930_4_ - 1);
+	            Block block1 = p_149930_1_.getBlock(p_149930_2_, p_149930_3_, p_149930_4_ + 1);
+            Block block2 = p_149930_1_.getBlock(p_149930_2_ - 1, p_149930_3_, p_149930_4_);
+	            Block block3 = p_149930_1_.getBlock(p_149930_2_ + 1, p_149930_3_, p_149930_4_);
+	            byte b0 = 3;
+
+            if (block.func_149730_j() && !block1.func_149730_j())
+            {
+	                b0 = 3;
+	            }
+
+	            if (block1.func_149730_j() && !block.func_149730_j())
+            {
+                b0 = 2;
+            }
+
+	            if (block2.func_149730_j() && !block3.func_149730_j())
+	            {
+	                b0 = 5;
+	            }
+
+            if (block3.func_149730_j() && !block2.func_149730_j())
+           {
+                b0 = 4;
+            }
+
+            p_149930_1_.setBlockMetadataWithNotify(p_149930_2_, p_149930_3_, p_149930_4_, b0, 2);
+	        }
+    }
+	  
+	public void onBlockPlacedBy(World par1World, int x, int y, int z, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
+	{
+	  int l = MathHelper.floor_double((double)(par5EntityLivingBase.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+		par1World.setBlockMetadataWithNotify(x, y, z, l, 2);
+	}
     
 	@Override
     public Item getItemDropped(int metadata, Random rand, int fortune)

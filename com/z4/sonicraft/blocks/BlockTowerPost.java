@@ -1,9 +1,13 @@
 package com.z4.sonicraft.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
@@ -45,7 +49,13 @@ public class BlockTowerPost extends BlockContainer {
     {
         return false;
     }
-   
+	
+    @Override
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLivingBase, ItemStack par6ItemStack)
+	{
+	  int dir = MathHelper.floor_double((double)(entityLivingBase.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+		world.setBlockMetadataWithNotify(x, y, z, dir, 2);
+	}
     
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
     	setBlockBoundsBasedOnState(world, x, y, z);

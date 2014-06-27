@@ -33,11 +33,33 @@ public class RenderCrystalNode extends TileEntitySpecialRenderer implements ISim
 	}
     
 	public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) {
+		int direction = tileEntity.getWorldObj().getBlockMetadata(tileEntity.xCoord, tileEntity.yCoord, tileEntity.zCoord);
+    	if (direction == 3) direction = 1;
+    	else if (direction == 1) direction = 3;
+    	else if (direction == 0) direction = 2;
+    	else if (direction == 2) direction = 0;
 		GL11.glPushMatrix();
-		GL11.glTranslatef((float) x - 0.0F, (float) y + 0.0F, (float) z + 1.0F);
+		
 		this.bindTexture(texture);
 		GL11.glPushMatrix();
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
+		GL11.glTranslatef((float) x - 0.0F, (float) y + 0.0F, (float) z + 1.0F);
+		if(direction == 1)
+		{
+			GL11.glRotatef(360F, 0, 1F, 0F);
+		}
+		else if(direction == 2)
+		{
+		GL11.glRotatef(90F, 0F, 1F, 0F);
+		}
+		else if(direction == 3)
+		{
+			GL11.glRotatef(180F, 0, 1F, 0F);
+		}
+		else if(direction == 0)
+		{
+			GL11.glRotatef(270F, 0, 1F, 0F);
+		}
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		GL11.glDisable(GL11.GL_CULL_FACE);
