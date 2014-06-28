@@ -177,7 +177,7 @@ public class BlockHumCrystal extends BlockContainer
 		if (par5Random.nextFloat() < 0.1F){
 			Sonicraft.proxy.sparkle(((float)x + 0.2F + world.rand.nextFloat() * 0.6F), ((float)y + 0.2F + world.rand.nextFloat() * 0.6F), ((float)z + 0.2F + world.rand.nextFloat() * 0.6F), 1F, 2, par5Random.nextFloat() / 20);
 		}
-		if (par5Random.nextFloat() < 0.75F){
+		if (par5Random.nextFloat() < 0.6F){
 			Sonicraft.proxy.hum(((float)x + 0.5F), ((float)y + 0.5F), ((float)z + 0.5F), 8F, 2, par5Random.nextFloat() / 20);
 	}
 	}

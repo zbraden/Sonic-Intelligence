@@ -44,7 +44,7 @@ public class FXHum extends EntityFX
         this.particleGravity = 0.0F;
         this.motionX = this.motionY = this.motionZ = 0.0D;
         this.particleScale *= var8;
-        this.particleMaxAge = 3 * mult;
+        this.particleMaxAge = 5 * mult;
         this.multiplier = mult;
         this.noClip = false;
         this.setSize(0.01F, 0.01F);

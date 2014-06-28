@@ -1,5 +1,7 @@
 package com.z4.sonicraft.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
@@ -11,6 +13,9 @@ import net.minecraft.world.World;
 import com.z4.sonicraft.Sonicraft;
 import com.z4.sonicraft.help.Reference;
 import com.z4.sonicraft.renderers.RenderTourmaline;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockTourmaline extends BlockContainer
 {
@@ -57,4 +62,11 @@ public class BlockTourmaline extends BlockContainer
     	return super.collisionRayTrace(world, x, y, z, start, end);
     }
    
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(World world, int x, int y, int z, Random par5Random) {
+		if (par5Random.nextFloat() < 0.1F){
+			Sonicraft.proxy.sparkle(((float)x + 0.2F + world.rand.nextFloat() * 0.6F), ((float)y + 0.2F + world.rand.nextFloat() * 0.6F), ((float)z + 0.2F + world.rand.nextFloat() * 0.6F), 1F, 3, par5Random.nextFloat() / 20);
+		}
+	}
 }

@@ -79,9 +79,9 @@ public class FXGlowSpark extends EntityFX
                 break;
 
             case 3:
-                this.particleRed = 0.2F;
-                this.particleGreen = 0.7F + world.rand.nextFloat() * 0.3F;
-                this.particleBlue = 0.2F;
+                this.particleRed = 0.4F;
+                this.particleGreen = 0.8F + world.rand.nextFloat() * 0.3F;
+                this.particleBlue = 0.7F;
                 break;
 
             case 4:
