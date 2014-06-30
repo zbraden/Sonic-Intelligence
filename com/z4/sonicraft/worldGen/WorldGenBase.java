@@ -2,11 +2,13 @@ package com.z4.sonicraft.worldGen;
 
 import java.util.Random;
 
-import com.z4.sonicraft.blocks.BlockMain;
-
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+
+import com.z4.sonicraft.blocks.BlockMain;
+
 //import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import cpw.mods.fml.common.IWorldGenerator;
 
@@ -21,6 +23,7 @@ public class WorldGenBase implements IWorldGenerator
 			 generateCobaltOverworld(world, random, chunkX*16, chunkZ*16);
 			 generateLimestoneOverworld(world, random, chunkX*16, chunkZ*16);
 			 generateCrystalsOverworld(world, random, chunkX*16, chunkZ*16);
+			 generateFig(world, random, chunkX*16, chunkZ*16);
 		 }
 	 }
 	 
@@ -63,4 +66,15 @@ public class WorldGenBase implements IWorldGenerator
 			 (new WorldGenMinable(BlockMain.crystalHum, 1)).generate(world, random, randPosX, randPosY, randPosZ);
 		 }
 	 }
+	 
+	 private void generateFig(World world, Random random, int chunkX, int chunkZ) {
+		 	int minHeight = 50;
+			int treesPerChunk = 10;
+		 for(int k = 0; k < treesPerChunk; k++){
+			int chunkX1 = chunkX + random.nextInt(16);
+			int chunkY1 = minHeight + random.nextInt(40);
+			int chunkZ1 = chunkZ + random.nextInt(16);
+			(new GenFigTree()).generate(world, random, chunkX1, chunkY1, chunkZ1);
+	 }
+}
 }

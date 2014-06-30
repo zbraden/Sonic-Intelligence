@@ -2,17 +2,12 @@ package com.z4.sonicraft.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.z4.sonicraft.Sonicraft;
 import com.z4.sonicraft.help.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockLogFig extends Block
 {
@@ -28,20 +23,15 @@ public class BlockLogFig extends Block
 		setHarvestLevel("axe", 0);
 	}
 	
-	@SideOnly(Side.CLIENT)
-	private IIcon woodTop;
-	
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int woodMeta)
+    @Override
+    public boolean isLadder(IBlockAccess world, int x, int y, int z, EntityLivingBase entity)
     {
-    	return side == 1 || side == 0 ? this.woodTop : this.blockIcon;
+        return true;
     }
     
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister woodSides1)
+	public boolean isOpaqueCube()
     {
-    this.blockIcon = woodSides1.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-    this.woodTop = woodSides1.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "Top");
+        return false;
     }
 
 	@Override
@@ -69,35 +59,9 @@ public class BlockLogFig extends Block
 			}
 		}
 	}
-
-	@Override
-	public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int meta)
-	{
-		int type = 0;
-		byte orientation = 0;
-
-		switch (side)
-		{
-		case 0:
-		case 1:
-			orientation = 0;
-			break;
-
-		case 2:
-		case 3:
-			orientation = 8;
-			break;
-
-		case 4:
-		case 5:
-			orientation = 4;
-		}
-
-		return type | orientation;
-	}
 	
     @Override
-    public boolean isLadder(IBlockAccess world, int x, int y, int z, EntityLivingBase entity)
+    public boolean canSustainLeaves(IBlockAccess world, int x, int y, int z)
     {
         return true;
     }
