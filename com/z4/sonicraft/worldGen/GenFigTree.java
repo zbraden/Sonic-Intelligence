@@ -14,6 +14,8 @@ public class GenFigTree extends WorldGenAbstractTree
 	
 	Random rand = new Random();
 	int branch = rand.nextInt(5);
+	Random rand2 = new Random();
+	int leaf = rand2.nextInt(4);
 	
 	public GenFigTree()
 	{
@@ -23,7 +25,7 @@ public class GenFigTree extends WorldGenAbstractTree
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z)
 	{
-		int height = random.nextInt(8) + 12;
+		int height = random.nextInt(4) + 13;
 		boolean generate = true;
 
 		if (y >= 1 && y + height + 1 <= 256)
@@ -74,7 +76,7 @@ public class GenFigTree extends WorldGenAbstractTree
 				if ((soilBlock == Blocks.dirt || soilBlock == Blocks.grass || soilBlock == Blocks.flowing_water) && y < 256 - height - 1)
 				{
 					byte leavesHeight = 3;
-					byte var18 = 2;
+					byte var18 = 1;
 
 					//Height = 7
 
@@ -89,38 +91,167 @@ public class GenFigTree extends WorldGenAbstractTree
 					//y -1
 
 					//Starts from the beginning of the leaves
-					for (int yi = y + height - leavesHeight + 1; yi <= y + height; ++yi)
+					for (int qyi = y + height - leavesHeight + 1; qyi <= y + height; ++qyi)
 					{
-						int delta = yi - (y + height);
+						int delta = qyi - (y + height);
 						int l1 = var18 + 1 - delta;
 
-						for (int xi = x - l1; xi <= x + l1; ++xi)
-						{
-							int j2 = xi - x;
-
-							for (int zi = z - l1; zi <= z + l1; ++zi)
+						if (leaf == 1){
+							for (int xi = x - l1; xi <= x + l1; ++xi)
 							{
-								int l2 = zi - z;
+								int j2 = xi - x;
+	
+								for (int zi = z - l1; zi <= z + l1; ++zi)
+								{
+									int i2 = zi - z;
+	
+									//																		  When yi == y + height
+									if (Math.abs(j2) != l1 || Math.abs(i2) != l1 || random.nextInt(2) != 0 && delta != 0)
+									{
+										Block block = world.getBlock(xi, qyi, zi);
 
-								//																		  When yi == y + height
-										if (Math.abs(j2) != l1 || Math.abs(l2) != l1 || random.nextInt(2) != 0 && delta != 0)
+										if (block.isAir(world, xi, qyi, zi) || block.isLeaves(world, xi, qyi, zi))
 										{
-											Block block = world.getBlock(xi, yi, zi);
-
-											if (block.isAir(world, xi, yi, zi) || block.isLeaves(world, xi, yi, zi))
-											{
-												this.setBlockAndNotifyAdequately(world, xi, yi, zi, Blocks.leaves, 4);
-												this.setBlockAndNotifyAdequately(world, xi, yi - 1, zi, Blocks.leaves, 4);
-
-												this.setBlockAndNotifyAdequately(world, x + 1, (y + height) - 3, z, Blocks.leaves, 4);
-												this.setBlockAndNotifyAdequately(world, x - 1, (y + height) - 3, z, Blocks.leaves, 4);
-												this.setBlockAndNotifyAdequately(world, x, (y + height) - 3, z + 1, Blocks.leaves, 4);
-												this.setBlockAndNotifyAdequately(world, x, (y + height) - 3, z - 1, Blocks.leaves, 4);
-											}
+											this.setBlockAndNotifyAdequately(world, xi, qyi, zi, Blocks.leaves, 4);
 										}
+									}
+								}
 							}
 						}
 					}
+					
+					if (leaf != 1){
+						for (int qyi = y + height - leavesHeight + 1; qyi <= y + height; ++qyi)
+						{
+							int delta = qyi - (y + height);
+							int l1 = var18 + 1 - delta;
+	
+							for (int xi = x - l1 + 4; xi <= x + l1; ++xi)
+							{
+								int j2 = xi - x + 4;
+	
+								for (int zi = z - l1; zi <= z + l1; ++zi)
+								{
+									int i2 = zi - z;
+	
+									//																		  When yi == y + height
+									if (Math.abs(j2) != l1 || Math.abs(i2) != l1 || random.nextInt(2) != 0 && delta != 0)
+									{
+										Block block = world.getBlock(xi, qyi, zi);
+
+										if (block.isAir(world, xi, qyi, zi) || block.isLeaves(world, xi, qyi, zi))
+										{
+											this.setBlockAndNotifyAdequately(world, xi, qyi + 4, zi, Blocks.leaves, 4);
+											this.setBlockAndNotifyAdequately(world, x + 4, y + height - leavesHeight + 5, z, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x + 3, y + height - leavesHeight + 4, z, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x + 2, y + height - leavesHeight + 3, z, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x + 1, y + height - leavesHeight + 2, z, BlockMain.logFig, 2);
+										}
+									}
+								}
+							}
+						}
+					}
+					
+					if (leaf != 3){
+						for (int qyi = y + height - leavesHeight + 1; qyi <= y + height; ++qyi)
+						{
+							int delta = qyi - (y + height);
+							int l1 = var18 + 1 - delta;
+	
+							for (int xi = x - l1  - 4; xi <= x + l1; ++xi)
+							{
+								int j2 = xi - x  - 4;
+	
+								for (int zi = z - l1; zi <= z + l1; ++zi)
+								{
+									int i2 = zi - z;
+	
+									//																		  When yi == y + height
+									if (Math.abs(j2) != l1 || Math.abs(i2) != l1 || random.nextInt(2) != 0 && delta != 0)
+									{
+										Block block = world.getBlock(xi, qyi, zi);
+
+										if (block.isAir(world, xi, qyi, zi) || block.isLeaves(world, xi, qyi, zi))
+										{
+											this.setBlockAndNotifyAdequately(world, xi, qyi + 1, zi, Blocks.leaves, 4);
+											this.setBlockAndNotifyAdequately(world, x - 4, y + height - leavesHeight + 3, z, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x - 3, y + height - leavesHeight + 2, z, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x - 2, y + height - leavesHeight + 1, z, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x - 1, y + height - leavesHeight, z, BlockMain.logFig, 2);
+										}
+									}
+								}
+							}
+						}
+					}
+
+					if (leaf != 2){
+						for (int qyi = y + height - leavesHeight + 1; qyi <= y + height; ++qyi)
+						{
+							int delta = qyi - (y + height);
+							int l1 = var18 + 1 - delta;
+	
+							for (int xi = x - l1; xi <= x + l1; ++xi)
+							{
+								int j2 = xi - x;
+	
+								for (int zi = z - l1 + 4; zi <= z + l1; ++zi)
+								{
+									int i2 = zi - z + 4;
+	
+									//																		  When yi == y + height
+									if (Math.abs(j2) != l1 || Math.abs(i2) != l1 || random.nextInt(2) != 0 && delta != 0)
+									{
+										Block block = world.getBlock(xi, qyi, zi);
+	
+										if (block.isAir(world, xi, qyi, zi) || block.isLeaves(world, xi, qyi, zi))
+										{
+											this.setBlockAndNotifyAdequately(world, xi, qyi, zi, Blocks.leaves, 4);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight + 2, z + 4, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight + 1, z + 3, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight, z + 2, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight - 1, z + 1, BlockMain.logFig, 2);
+										}
+									}
+								}
+							}
+						}
+					}
+
+					if (leaf != 3){
+						for (int qyi = y + height - leavesHeight + 1; qyi <= y + height; ++qyi)
+						{
+							int delta = qyi - (y + height);
+							int l1 = var18 + 1 - delta;
+	
+							for (int xi = x - l1; xi <= x + l1; ++xi)
+							{
+								int j2 = xi - x;
+	
+								for (int zi = z - l1 - 4; zi <= z + l1; ++zi)
+								{
+									int i2 = zi - z - 4;
+	
+									//																		  When yi == y + height
+									if (Math.abs(j2) != l1 || Math.abs(i2) != l1 || random.nextInt(2) != 0 && delta != 0)
+									{
+										Block block = world.getBlock(xi, qyi, zi);
+
+										if (block.isAir(world, xi, qyi, zi) || block.isLeaves(world, xi, qyi, zi))
+										{
+											this.setBlockAndNotifyAdequately(world, xi, qyi - 1, zi, Blocks.leaves, 4);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight + 1, z - 4, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight, z - 3, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight - 1, z - 2, BlockMain.logFig, 2);
+											this.setBlockAndNotifyAdequately(world, x, y + height - leavesHeight - 2, z - 1, BlockMain.logFig, 2);
+										}
+									}
+								}
+							}
+						}
+					}
+
 
 					for (int yi = 0; yi < height; ++yi)
 					{

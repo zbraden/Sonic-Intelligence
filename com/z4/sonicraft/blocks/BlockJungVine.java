@@ -38,7 +38,7 @@ public class BlockJungVine extends BlockVine {
     @SideOnly(Side.CLIENT)
     public int colorMultiplier(IBlockAccess p_149720_1_, int p_149720_2_, int p_149720_3_, int p_149720_4_)
     {
-        return 0x605647;//0xAF9A85;
+        return 0x7c7463;//0xAF9A85;
     }
 
 }
