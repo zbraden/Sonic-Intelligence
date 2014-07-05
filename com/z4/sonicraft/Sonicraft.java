@@ -2,15 +2,17 @@ package com.z4.sonicraft;
 
 import net.minecraft.creativetab.CreativeTabs;
 
-import com.z4.sonicraft.blocks.BlockHumCrystalEntity;
-import com.z4.sonicraft.blocks.BlockMain;
-import com.z4.sonicraft.blocks.BlockTourmalineEntity;
-import com.z4.sonicraft.blocks.BlockTowerPostEntity;
-import com.z4.sonicraft.fluids.FluidMain;
-import com.z4.sonicraft.help.Reference;
-import com.z4.sonicraft.items.ItemsMain;
-import com.z4.sonicraft.proxy.CommonProxy;
-import com.z4.sonicraft.worldGen.WorldGen;
+import com.z4.sonicraft.api.CreativeTabsSonicraft;
+import com.z4.sonicraft.common.CommonProxy;
+import com.z4.sonicraft.common.blocks.BlockHumCrystalEntity;
+import com.z4.sonicraft.common.blocks.BlockMain;
+import com.z4.sonicraft.common.blocks.BlockTourmalineEntity;
+import com.z4.sonicraft.common.blocks.BlockTowerPostEntity;
+import com.z4.sonicraft.common.fluids.FluidMain;
+import com.z4.sonicraft.common.items.ItemsMain;
+import com.z4.sonicraft.common.utils.Reference;
+import com.z4.sonicraft.common.world.WorldGen;
+import com.z4.sonicraft.common.world.generation.WorldGenFieldAssociation;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -23,7 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Sonicraft
 {  
 	//Setup Proxy
-	@SidedProxy(clientSide="com.z4.sonicraft.proxy.ClientProxy", serverSide="com.z4.sonicraft.proxy.CommonProxy")
+	@SidedProxy(clientSide="com.z4.sonicraft.client.ClientProxy", serverSide="com.z4.sonicraft.common.CommonProxy")
 	public static CommonProxy proxy;
     //Setting up creative tab
     public static CreativeTabs tabSonicraft = new CreativeTabsSonicraft("sonicraftMain");
@@ -40,6 +42,7 @@ public class Sonicraft
     	//Load and Register Items
     	ItemsMain.loadItems();
     	//Load and Register World Gen
+    	WorldGenFieldAssociation.init();
     	WorldGen.init();
     	//Register Proxy Renderers
     	proxy.registerRenderers();
