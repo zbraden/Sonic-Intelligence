@@ -17,6 +17,8 @@ public class WorldGen {
 	
 	public static BiomeGenBase biomeDiamond;
 	
+	public static BiomeGenBase onlyBiome = null;
+	
 	public static void init() {
 		// Load World Generators
 		//Register World Generators

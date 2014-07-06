@@ -1,6 +1,7 @@
 package com.z4.sonicraft;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.z4.sonicraft.api.CreativeTabsSonicraft;
 import com.z4.sonicraft.common.CommonProxy;
@@ -9,6 +10,10 @@ import com.z4.sonicraft.common.blocks.BlockMain;
 import com.z4.sonicraft.common.blocks.BlockTourmalineEntity;
 import com.z4.sonicraft.common.blocks.BlockTowerPostEntity;
 import com.z4.sonicraft.common.fluids.FluidMain;
+import com.z4.sonicraft.common.handlers.BiomeGenEventHandler;
+import com.z4.sonicraft.common.handlers.BiomeSizeEventHandler;
+import com.z4.sonicraft.common.handlers.DecorationModificationEventHandler;
+import com.z4.sonicraft.common.handlers.MapGenEventHandler;
 import com.z4.sonicraft.common.items.ItemsMain;
 import com.z4.sonicraft.common.utils.Reference;
 import com.z4.sonicraft.common.world.WorldGen;
@@ -35,20 +40,30 @@ public class Sonicraft
     {
     	//Startup Call out
     	System.out.println("Wait!... Did you hear that?");
+    	
     	//Load and Register Fluids
     	FluidMain.loadFluids();
+    	
     	//Load and Register blocks
     	BlockMain.loadBlocks();
+    	
     	//Load and Register Items
     	ItemsMain.loadItems();
+    	
     	//Load and Register World Gen
     	WorldGenFieldAssociation.init();
     	WorldGen.init();
+    	
     	//Register Proxy Renderers
     	proxy.registerRenderers();
     	GameRegistry.registerTileEntity(BlockHumCrystalEntity.class, "blockHumCrystal");
     	GameRegistry.registerTileEntity(BlockTourmalineEntity.class, "blockTourmaline");
     	GameRegistry.registerTileEntity(BlockTowerPostEntity.class, "blockTowerPost");
+    	
+    	//Call Handlers
+    	MinecraftForge.TERRAIN_GEN_BUS.register(new DecorationModificationEventHandler());
+    	MinecraftForge.TERRAIN_GEN_BUS.register(new BiomeSizeEventHandler());
+    	MinecraftForge.TERRAIN_GEN_BUS.register(new BiomeGenEventHandler());
     }
     
     @EventHandler
