@@ -8,7 +8,9 @@ import net.minecraft.world.gen.layer.GenLayerAddSnow;
 import net.minecraft.world.gen.layer.GenLayerDeepOcean;
 import net.minecraft.world.gen.layer.GenLayerEdge;
 import net.minecraft.world.gen.layer.GenLayerFuzzyZoom;
+import net.minecraft.world.gen.layer.GenLayerHills;
 import net.minecraft.world.gen.layer.GenLayerIsland;
+import net.minecraft.world.gen.layer.GenLayerRareBiome;
 import net.minecraft.world.gen.layer.GenLayerRemoveTooMuchOcean;
 import net.minecraft.world.gen.layer.GenLayerRiver;
 import net.minecraft.world.gen.layer.GenLayerRiverInit;
@@ -56,17 +58,17 @@ public abstract class GenLayerSound extends GenLayer{
         GenLayerRiverInit genlayerriverinit = new GenLayerRiverInit(100L, genlayer);
         Object object = par2WorldType.getBiomeLayer(seed, genlayer2);
 
-        //GenLayer genlayer1 = GenLayerZoom.magnify(1000L, genlayerriverinit, 2);
-        //GenLayerHills genlayerhills = new GenLayerHills(1000L, (GenLayer)object, genlayer1);
+        GenLayer genlayer1 = GenLayerZoom.magnify(1000L, genlayerriverinit, 2);
+        GenLayerHills genlayerhills = new GenLayerHills(1000L, (GenLayer)object, genlayer1);
         
-        //GenLayerSubBiome genlayersubbiome = new GenLayerSubBiome(1500L, genlayerhills);
+        GenLayerSubBiome genlayersubbiome = new GenLayerSubBiome(1500L, genlayerhills);
         
         genlayer = GenLayerZoom.magnify(1000L, genlayerriverinit, 2);
         genlayer = GenLayerZoom.magnify(1000L, genlayer, b0);
         GenLayerRiver genlayerriver = new GenLayerRiver(1L, genlayer);
         GenLayerSmooth genlayersmooth = new GenLayerSmooth(1000L, genlayerriver);
-        //object = new GenLayerRareBiome(1001L, genlayerhills);
-        //object = new GenLayerRareBiome(1001L, genlayersubbiome);
+        object = new GenLayerRareBiome(1001L, genlayerhills);
+        object = new GenLayerRareBiome(1001L, genlayersubbiome);
         
         for (int j = 0; j < b0; ++j)
         {
@@ -84,7 +86,7 @@ public abstract class GenLayerSound extends GenLayer{
         }
 
         GenLayerSmooth genlayersmooth1 = new GenLayerSmooth(1000L, (GenLayer)object);
-        GenLayerRiverMixSound genlayerrivermix = new GenLayerRiverMixSound(100L, genlayersmooth1, genlayersmooth);
+        GenLayerRiverMixSound genlayerrivermix = new GenLayerRiverMixSound(80L, genlayersmooth1, genlayersmooth);
         GenLayerVoronoiZoom genlayervoronoizoom = new GenLayerVoronoiZoom(10L, genlayerrivermix);
         genlayerrivermix.initWorldGenSeed(seed);
         genlayervoronoizoom.initWorldGenSeed(seed);

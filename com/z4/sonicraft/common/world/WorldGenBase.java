@@ -69,11 +69,14 @@ public class WorldGenBase implements IWorldGenerator
 	 private void generateFig(World world, Random random, int chunkX, int chunkZ) {
 		 	int minHeight = 50;
 			int treesPerChunk = 10;
+			
 		 for(int k = 0; k < treesPerChunk; k++){
 			int chunkX1 = chunkX + random.nextInt(16);
 			int chunkY1 = minHeight + random.nextInt(40);
 			int chunkZ1 = chunkZ + random.nextInt(16);
+			if (chunkY1 < 76) {
 			(new GenFigTree()).generate(world, random, chunkX1, chunkY1, chunkZ1);
+			}
 	 }
 }
 }

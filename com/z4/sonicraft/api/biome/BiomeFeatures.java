@@ -21,6 +21,7 @@ public class BiomeFeatures {
 
 	    @BiomeFeature public int bopFlowersPerChunk = 0;
 	    @BiomeFeature public int bopGrassPerChunk = 0;
+	    @BiomeFeature public int waterSpringsPerChunk = 50;
 
 	    public BiomeFeatures()
 	    {

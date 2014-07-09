@@ -12,7 +12,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class BiomeGenEventHandler {
 	@SubscribeEvent
-	public void registrerBiomes(InitBiomeGens event){
+	public void registerBiomes(InitBiomeGens event){
 		GenLayer layer1 = event.newBiomeGens[0];
 		GenLayer layer2 = event.newBiomeGens[1];
 		

@@ -10,7 +10,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerBiome;
 import net.minecraft.world.gen.layer.IntCache;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 
 import com.z4.sonicraft.common.world.SonicraftBiomeManager;
@@ -25,21 +24,20 @@ public class GenLayerBiomeSound extends GenLayerBiome
 	{
 		super(seed, parentLayer, worldType);
 
-		//this.biomeLists[0].addAll(SonicraftBiomeManager.overworldBiomes[0]);
-		this.biomeLists[1].addAll(SonicraftBiomeManager.overworldBiomes[1]);
+		this.biomeLists[0].addAll(SonicraftBiomeManager.overworldBiomes[0]);
+		//this.biomeLists[1].addAll(SonicraftBiomeManager.overworldBiomes[1]);
 		//this.biomeLists[2].addAll(SonicraftBiomeManager.overworldBiomes[2]);
 		//this.biomeLists[3].addAll(SonicraftBiomeManager.overworldBiomes[3]);
 
-		this.biomeLists[0].addAll(BiomeManager.desertBiomes);
-		this.biomeLists[1].addAll(BiomeManager.warmBiomes);
-		this.biomeLists[2].addAll(BiomeManager.coolBiomes);
-		this.biomeLists[3].addAll(BiomeManager.icyBiomes);
+		//this.biomeLists[0].addAll(BiomeManager.desertBiomes);
+		//this.biomeLists[1].addAll(BiomeManager.warmBiomes);
+		//this.biomeLists[2].addAll(BiomeManager.coolBiomes);
+		//this.biomeLists[3].addAll(BiomeManager.icyBiomes);
 
-        this.biomeLists[0].add(new BiomeEntry(BiomeGenBase.desert, 30));
-        this.biomeLists[0].add(new BiomeEntry(BiomeGenBase.savanna, 20));
-        this.biomeLists[0].add(new BiomeEntry(BiomeGenBase.plains, 10));
+        //this.biomeLists[0].add(new BiomeEntry(BiomeGenBase.desert, 30));
+        //this.biomeLists[0].add(new BiomeEntry(BiomeGenBase.savanna, 20));
+        //this.biomeLists[0].add(new BiomeEntry(BiomeGenBase.plains, 10));
 	}
-
 
     @Override
 	public int[] getInts(int x, int z, int width, int length)
@@ -133,7 +131,7 @@ public class GenLayerBiomeSound extends GenLayerBiome
     private int getBiomeIdFromMixedList(int... listIdExclusions)
     {
     	List listIdExclusionList = Arrays.asList(listIdExclusions);
-		List<BiomeEntry> mixedBiomeList = new ArrayList();
+		List<BiomeEntry> mixedBiomeList = new ArrayList<BiomeEntry>();
 
 		for (int i = 0; i < 4; i++)
 		{

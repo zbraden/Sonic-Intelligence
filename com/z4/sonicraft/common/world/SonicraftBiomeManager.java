@@ -7,9 +7,13 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 
 public class SonicraftBiomeManager {
-	private static int nextBiomeId = 40;
+	private static int nextBiomeId = 70;
 
 	public static List<BiomeEntry>[] overworldBiomes = new ArrayList[4];
+	public static List<BiomeEntry>[] overworldSubBiomes = new ArrayList[BiomeGenBase.getBiomeGenArray().length];
+	public static List<Integer> overworldOceanBiomes = new ArrayList();
+	public static BiomeGenBase[] overworldRiverBiomes = new BiomeGenBase[BiomeGenBase.getBiomeGenArray().length];
+	public static List<BiomeEntry> netherBiomes = new ArrayList();
 
 	public static BiomeGenBase createAndRegisterBiome(Class<? extends BiomeGenBase> biomeClass, String biomeType, String biomeName, List<BiomeEntry> biomeList, int weight)
 	{
@@ -17,8 +21,12 @@ public class SonicraftBiomeManager {
 
 		if (biome != null)
 		{
-			BiomeEntry entry = new BiomeEntry(biome, getConfiguredWeight(biome, biomeType, weight));
-			biomeList.add(entry);
+			BiomeEntry entry = new BiomeEntry(biome, 10);
+
+			
+				if (biomeList != null) biomeList.add(entry);
+			//}
+
 			return biome;
 		}
 
@@ -32,8 +40,9 @@ public class SonicraftBiomeManager {
 		if (biomeId != -1)
 		{ 
 			try
-			{
+			{				
 				BiomeGenBase biome;
+				//System.out.println(biomeClass);
 				biome = biomeClass.getConstructor(int.class).newInstance(biomeId).setBiomeName(biomeName);
 				return biome;
 			}
@@ -72,7 +81,7 @@ public class SonicraftBiomeManager {
 
 	private static int getConfiguredWeight(BiomeGenBase biome, String biomeType, int weight)
 	{
-		return 1;
+		return 10;
 	}
 
 	public class TemperatureType

@@ -13,16 +13,17 @@ import com.z4.sonicraft.common.fluids.FluidMain;
 import com.z4.sonicraft.common.handlers.BiomeGenEventHandler;
 import com.z4.sonicraft.common.handlers.BiomeSizeEventHandler;
 import com.z4.sonicraft.common.handlers.DecorationModificationEventHandler;
-import com.z4.sonicraft.common.handlers.MapGenEventHandler;
 import com.z4.sonicraft.common.items.ItemsMain;
 import com.z4.sonicraft.common.utils.Reference;
 import com.z4.sonicraft.common.world.WorldGen;
+import com.z4.sonicraft.common.world.WorldTypeSound;
 import com.z4.sonicraft.common.world.generation.WorldGenFieldAssociation;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -74,4 +75,9 @@ public class Sonicraft
     	Crafting.loadRecipes();
     }
 
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+    	 WorldGen.worldTypeSound = new WorldTypeSound();
+    }
 }
